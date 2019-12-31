@@ -1,3 +1,3 @@
-import React from 'react';
+import React, {FC} from 'react';
 
-export const Heading = () => <h1>Fragile to agile</h1>;
+export const Heading: FC = () => <h1>Fragile to agile</h1>;
