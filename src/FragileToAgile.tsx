@@ -13,7 +13,7 @@ class FragileToAgile extends Component {
     public render() {
         return (
             <div>
-                <Heading/>
+                <Heading recipient={'Fragile to agile'}/>/>
             </div>
         );
     }

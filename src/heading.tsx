@@ -1,3 +1,7 @@
 import React, {FC} from 'react';
 
-export const Heading: FC = () => <h1>Fragile to agile</h1>;
+interface HeadingProperties {
+    recipient: string;
+}
+
+export const Heading: FC<HeadingProperties> = ({recipient}) => <h1>{recipient}</h1>;
