@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Heading} from './heading';
 
 // const FragileToAgile: React.FC = () => {
 //     return (
@@ -9,12 +10,10 @@ import React, {Component} from 'react';
 // };
 
 class FragileToAgile extends Component {
-    private appName = 'Fragile to agile';
-
     public render() {
         return (
             <div>
-                <h1>{this.appName}</h1>
+                <Heading/>
             </div>
         );
     }
