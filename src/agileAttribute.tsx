@@ -1,10 +1,21 @@
 import React, {Component} from 'react';
 
-interface AttributeProperties {
+interface AgileAttributeProperties {
     label: string;
 }
 
-export class AgileAttribute extends Component<AttributeProperties> {
+interface AgileAttributeState {
+    active: boolean;
+}
+
+export class AgileAttribute extends Component<AgileAttributeProperties, AgileAttributeState> {
+    constructor(props: AgileAttributeProperties) {
+        super(props);
+        this.state = {
+            active: false
+        };
+    }
+
     render() {
         return (
             <div className="AgileAttribute">
