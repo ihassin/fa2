@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Heading} from './heading';
+import {AgileAttribute} from './agileAttribute';
 
 // const FragileToAgile: React.FC = () => {
 //     return (
@@ -13,7 +14,8 @@ class FragileToAgile extends Component {
     public render() {
         return (
             <div>
-                <Heading recipient={'Fragile to agile'}/>/>
+                <Heading recipient={'Fragile to agile'}/>
+                <AgileAttribute label={'MVP'}/>
             </div>
         );
     }
