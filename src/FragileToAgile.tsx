@@ -15,7 +15,7 @@ class FragileToAgile extends Component {
         return (
             <div>
                 <Heading recipient={'Fragile to agile'}/>
-                <AgileAttribute label={'MVP'} color={'black'}/>
+                <AgileAttribute label={'MVP'} color={'red'}/>
             </div>
         );
     }

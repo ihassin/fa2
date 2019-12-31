@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 interface AgileAttributeProperties {
     label: string;
-    color: 'black';
+    color: 'red';
 }
 
 interface AgileAttributeState {
@@ -18,7 +18,7 @@ export class AgileAttribute extends Component<AgileAttributeProperties, AgileAtt
     }
 
     handleClick = () => {
-        this.setState({active: true});
+        this.setState({active: !this.state.active});
     };
 
     renderX() {
@@ -32,16 +32,16 @@ export class AgileAttribute extends Component<AgileAttributeProperties, AgileAtt
     render() {
         const color_ = this.props.color;
         return (
-            <div
-                style={{
-                    color: color_,
-                    border: '1px solid',
-                    // backgroundColor: color_,
-                    // borderRadius: "50%",
-                    borderColor: color_,
-                    width: 100,
-                    height: 75
-                }}>
+            <div onClick={this.handleClick}
+                 style={{
+                     color: color_,
+                     border: '1px solid',
+                     // backgroundColor: color_,
+                     // borderRadius: "50%",
+                     borderColor: this.state.active ? 'red' : 'black',
+                     width: 100,
+                     height: 75
+                 }}>
             </div>
         );
     }
