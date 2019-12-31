@@ -17,11 +17,11 @@ export class AgileAttribute extends Component<AgileAttributeProperties, AgileAtt
         };
     }
 
-    handleClick = () => {
+    handleClick = (event: React.MouseEvent<HTMLElement>) => {
         this.setState({active: !this.state.active});
     };
 
-    renderX() {
+    render() {
         return (
             <div className="AgileAttribute" onClick={this.handleClick}>
                 <label htmlFor='label'>{this.props.label}</label>
@@ -29,21 +29,21 @@ export class AgileAttribute extends Component<AgileAttributeProperties, AgileAtt
         );
     }
 
-    render() {
-        const color_ = this.props.color;
-        return (
-            <div onClick={this.handleClick}
-                 style={{
-                     color: color_,
-                     border: '1px solid',
-                     // backgroundColor: color_,
-                     // borderRadius: "50%",
-                     borderColor: this.state.active ? 'red' : 'black',
-                     width: 100,
-                     height: 75
-                 }}>
-            </div>
-        );
-    }
+    // render() {
+    //     const color_ = this.props.color;
+    //     return (
+    //         <div className="AgileAttribute" onClick={this.handleClick}>
+    //          style={{
+    //              color: color_,
+    //              border: '1px solid',
+    //              // backgroundColor: color_,
+    //              // borderRadius: "50%",
+    //              borderColor: this.state.active ? 'red' : 'black',
+    //              width: 100,
+    //              height: 75
+    //          }}>
+    //         </div>
+    //     );
+    // }
 
 }
