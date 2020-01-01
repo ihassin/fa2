@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 
 interface HeadingProperties {
-    recipient: string;
+    title: string;
 }
 
-export const Heading: FC<HeadingProperties> = ({recipient}) => <h1>{recipient}</h1>;
+export const Heading: FC<HeadingProperties> = ({title}) => <h1>{title}</h1>;

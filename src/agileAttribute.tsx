@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 
 interface AgileAttributeProperties {
     label: string;
-    color: 'red';
+    top: string;
+    left: string;
 }
 
 interface AgileAttributeState {
@@ -17,33 +18,30 @@ export class AgileAttribute extends Component<AgileAttributeProperties, AgileAtt
         };
     }
 
+    divStyle = {
+        // margin: '20px',
+        // width: 100,
+        // height: 25,
+    };
+
     handleClick = (event: React.MouseEvent<HTMLElement>) => {
         this.setState({active: !this.state.active});
     };
 
     render() {
         return (
-            <div className="AgileAttribute" onClick={this.handleClick}>
-                <label htmlFor='label'>{this.props.label}</label>
+            <div id={this.props.label} style={this.divStyle} className="AgileAttribute" onClick={this.handleClick}>
+                <label style={{
+                    border: '1px',
+                    fontSize: '35px',
+                    borderColor: this.state.active ? 'red' : 'black',
+                    borderStyle: this.state.active ? 'solid' : 'dotted',
+                    opacity: this.state.active ? 1 : 0.5,
+                    position: 'absolute',
+                    top: this.props.top,
+                    left: this.props.left
+                }}>{this.props.label}</label>
             </div>
         );
     }
-
-    // render() {
-    //     const color_ = this.props.color;
-    //     return (
-    //         <div className="AgileAttribute" onClick={this.handleClick}>
-    //          style={{
-    //              color: color_,
-    //              border: '1px solid',
-    //              // backgroundColor: color_,
-    //              // borderRadius: "50%",
-    //              borderColor: this.state.active ? 'red' : 'black',
-    //              width: 100,
-    //              height: 75
-    //          }}>
-    //         </div>
-    //     );
-    // }
-
 }
