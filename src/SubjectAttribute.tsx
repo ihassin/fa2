@@ -1,17 +1,17 @@
 import React, {Component} from 'react';
 
-interface AgileAttributeProperties {
+interface SubjectProperties {
     label: string;
     top: string;
     left: string;
 }
 
-interface AgileAttributeState {
+interface SubjectState {
     active: boolean;
 }
 
-export class AgileAttribute extends Component<AgileAttributeProperties, AgileAttributeState> {
-    constructor(props: AgileAttributeProperties) {
+export class SubjectAttribute extends Component<SubjectProperties, SubjectState> {
+    constructor(props: SubjectProperties) {
         super(props);
         this.state = {
             active: false
@@ -30,7 +30,7 @@ export class AgileAttribute extends Component<AgileAttributeProperties, AgileAtt
 
     render() {
         return (
-            <div id={this.props.label} style={this.divStyle} className="AgileAttribute" onClick={this.handleClick}>
+            <div id={this.props.label} style={this.divStyle} className="SubjectAttribute" onClick={this.handleClick}>
                 <label style={{
                     border: '1px',
                     fontSize: '35px',

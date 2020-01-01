@@ -1,7 +1,7 @@
 import React from 'react';
 import FragileToAgile from './FragileToAgile';
 import {mount, shallow} from 'enzyme';
-import {AgileAttribute} from './agileAttribute';
+import {SubjectAttribute} from './SubjectAttribute';
 
 it('renders the heading', () => {
     const wrapper = mount(<FragileToAgile/>);
@@ -9,6 +9,6 @@ it('renders the heading', () => {
 });
 
 it('renders an agile attribute', () => {
-    const wrapper = shallow(<AgileAttribute label={'MVP'} left={'20px'} top={'380px'}/>);
-    expect(wrapper.find('.AgileAttribute label').text()).toBe('MVP');
+    const wrapper = shallow(<SubjectAttribute label={'MVP'} left={'20px'} top={'380px'}/>);
+    expect(wrapper.find('.SubjectAttribute label').text()).toBe('MVP');
 });
