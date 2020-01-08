@@ -6,7 +6,9 @@ import {SubjectAttribute} from './SubjectAttribute';
 it('renders the main component', () => {
     const wrapper = mount(<FragileToAgile/>);
     expect(wrapper.find('h1').text()).toBe('Fragile to agile');
+
     expect(wrapper.find('#MVP')).toHaveLength(1);
+    expect(wrapper.find('#agile')).toHaveLength(1);
 });
 
 function handleSelect(event: React.MouseEvent<HTMLElement>) {
