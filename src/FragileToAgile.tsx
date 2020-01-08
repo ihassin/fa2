@@ -18,7 +18,7 @@ class FragileToAgile extends Component {
 
     handleSelect(event: React.MouseEvent<HTMLElement>) {
         // @ts-ignore
-        alert(event.currentTarget.firstChild.textContent);
+        alert(event.target.firstChild.data);
     };
 
     public render() {

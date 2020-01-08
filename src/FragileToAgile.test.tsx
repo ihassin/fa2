@@ -16,5 +16,5 @@ it('renders the MVP node', () => {
     // @ts-ignore
     const wrapper = shallow(<SubjectAttribute label={'MVP'} left={'20px'} top={'380px'} active={true}
                                               onSelect={handleSelect}/>);
-    expect(wrapper.find('.SubjectAttribute label').text()).toBe('MVP');
+    expect(wrapper.find('#MVP').text()).toBe('MVP');
 });
