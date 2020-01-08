@@ -8,12 +8,12 @@ interface SubjectProperties {
     onSelect: (event: React.MouseEvent<HTMLElement>) => void;
 }
 
-export function SubjectAttribute({label, onSelect, active, top, left} : SubjectProperties) {
+export function SubjectAttribute({label, top, left, active, onSelect  } : SubjectProperties) {
     // const [ active, setActive ] = React.useState(false);
 
     return (
-        <div id={label} className="SubjectAttribute" onClick={onSelect}>
-            <label style={{
+        <div id={label} className="SubjectAttribute">
+            <label onClick={onSelect} style={{
                 border: '1px',
                 fontSize: '35px',
                 borderColor: active ? 'red' : 'black',

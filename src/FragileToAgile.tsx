@@ -3,7 +3,9 @@ import {Heading} from './heading';
 import {SubjectAttribute} from './SubjectAttribute';
 
 class FragileToAgile extends Component {
-    handleSelect (event: React.MouseEvent<HTMLElement>) {
+    handleSelect(event: React.MouseEvent<HTMLElement>) {
+        // @ts-ignore
+        alert(event.currentTarget.firstChild.textContent)
     };
 
     public render() {
@@ -11,12 +13,12 @@ class FragileToAgile extends Component {
             {
                 label: 'MVP',
                 left: '20px',
-                top : '380px'
+                top: '380px'
             },
             {
-                label : 'agile',
+                label: 'agile',
                 left: '1200px',
-                top : '480px'
+                top: '480px'
             }
         ];
 
@@ -25,7 +27,8 @@ class FragileToAgile extends Component {
                 <Heading title={'Fragile to agile'}/>
                 {
                     subjects.map(({label, left, top}) => {
-                        return <SubjectAttribute onSelect={this.handleSelect} key={label} label={label} left={left} active={false} top={top}/>;
+                        return <SubjectAttribute key={label} label={label} top={top} left={left}
+                                                 onSelect={this.handleSelect} active={false}/>;
                     })
                 }
             </div>

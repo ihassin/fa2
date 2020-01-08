@@ -9,7 +9,12 @@ it('renders the main component', () => {
     expect(wrapper.find('#MVP')).toHaveLength(1);
 });
 
+function handleSelect(event: Event | undefined) {
+}
+
 it('renders the MVP node', () => {
-    const wrapper = shallow(<SubjectAttribute label={'MVP'} left={'20px'} top={'380px'}/>);
+    // @ts-ignore
+    const wrapper = shallow(<SubjectAttribute label={'MVP'} left={'20px'} top={'380px'} active={true}
+                                              onSelect={handleSelect}/>);
     expect(wrapper.find('.SubjectAttribute label').text()).toBe('MVP');
 });
