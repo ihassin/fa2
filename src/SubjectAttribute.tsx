@@ -4,39 +4,46 @@ interface SubjectProperties {
     label: string;
     top: string;
     left: string;
-}
-
-interface SubjectState {
     active: boolean;
+    onSelect: (event: React.MouseEvent<HTMLElement>) => void;
 }
 
-export class SubjectAttribute extends Component<SubjectProperties, SubjectState> {
-    constructor(props: SubjectProperties) {
-        super(props);
-        this.state = {
-            active: false
-        };
-    }
+export function SubjectAttribute({label, onSelect, active, top, left} : SubjectProperties) {
+    // const [ active, setActive ] = React.useState(false);
 
-    divStyle = {
-        // margin: '20px',
-        // width: 100,
-        // height: 25,
-    };
+    return (
+        <div id={label} className="SubjectAttribute" onClick={onSelect}>
+            <label style={{
+                border: '1px',
+                fontSize: '35px',
+                borderColor: active ? 'red' : 'black',
+                borderStyle: active ? 'solid' : 'dotted',
+                opacity: active ? 1 : 0.5,
+                position: 'absolute',
+                top: top,
+                left: left
+            }}>{label}</label>
+        </div>
+    );
+}
 
-    handleClick = (event: React.MouseEvent<HTMLElement>) => {
-        this.setState({active: !this.state.active});
-    };
+export class OldSubjectAttribute extends Component<SubjectProperties> {
 
     render() {
+        const divStyle = {
+            margin: '20px',
+            width: '100px',
+            height: '25px',
+        };
+
         return (
-            <div id={this.props.label} style={this.divStyle} className="SubjectAttribute" onClick={this.handleClick}>
+            <div id={this.props.label} className="SubjectAttribute" onClick={this.props.onSelect}>
                 <label style={{
                     border: '1px',
                     fontSize: '35px',
-                    borderColor: this.state.active ? 'red' : 'black',
-                    borderStyle: this.state.active ? 'solid' : 'dotted',
-                    opacity: this.state.active ? 1 : 0.5,
+                    borderColor: this.props.active ? 'red' : 'black',
+                    borderStyle: this.props.active ? 'solid' : 'dotted',
+                    opacity: this.props.active ? 1 : 0.5,
                     position: 'absolute',
                     top: this.props.top,
                     left: this.props.left
