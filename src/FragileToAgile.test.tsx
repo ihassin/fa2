@@ -9,7 +9,7 @@ it('renders the main component', () => {
     expect(wrapper.find('#MVP')).toHaveLength(1);
 });
 
-function handleSelect(event: Event | undefined) {
+function handleSelect(event: React.MouseEvent<HTMLElement>) {
 }
 
 it('renders the MVP node', () => {
