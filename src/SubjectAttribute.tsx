@@ -26,29 +26,3 @@ export function SubjectAttribute({label, top, left, active, onSelect  } : Subjec
         </div>
     );
 }
-
-export class OldSubjectAttribute extends Component<SubjectProperties> {
-
-    render() {
-        const divStyle = {
-            margin: '20px',
-            width: '100px',
-            height: '25px',
-        };
-
-        return (
-            <div id={this.props.label} className="SubjectAttribute" onClick={this.props.onSelect}>
-                <label style={{
-                    border: '1px',
-                    fontSize: '35px',
-                    borderColor: this.props.active ? 'red' : 'black',
-                    borderStyle: this.props.active ? 'solid' : 'dotted',
-                    opacity: this.props.active ? 1 : 0.5,
-                    position: 'absolute',
-                    top: this.props.top,
-                    left: this.props.left
-                }}>{this.props.label}</label>
-            </div>
-        );
-    }
-}
