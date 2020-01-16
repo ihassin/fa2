@@ -3,6 +3,11 @@ import {Heading} from './heading';
 import {SubjectAttribute} from './SubjectAttribute';
 
 class FragileToAgile extends Component {
+    private s = [
+        <SubjectAttribute label={'test'} top={'200px'} left={'100px'} active={false} onSelect={this.handleSelect}/>,
+        <SubjectAttribute label={'test1'} top={'1200px'} left={'300px'} active={false} onSelect={this.handleSelect}/>,
+    ];
+
     private subjects = [
         {
             label: 'MVP',
